@@ -3,6 +3,7 @@ module github.com/vmware-tanzu/tanzu-cli
 go 1.19
 
 require (
+	github.com/adrg/xdg v0.4.0
 	github.com/aunum/log v0.0.0-20200821225356-38d2e2c8b489
 	github.com/logrusorgru/aurora v2.0.3+incompatible
 	github.com/spf13/cobra v1.6.1
