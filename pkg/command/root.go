@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/vmware-tanzu/tanzu-cli/pkg/cli"
+	"github.com/vmware-tanzu/tanzu-plugin-runtime/plugin"
 )
 
 // NewRootCmd creates a root command.
@@ -69,6 +70,17 @@ func getAvailablePlugins() ([]*cli.PluginInfo, error) {
 		return plugins, nil
 	*/
 	plugins := make([]*cli.PluginInfo, 0)
+
+	// PluginInfo contains information about a plugin binary.
+	pi := &cli.PluginInfo{
+		Name:             "tmpfoo",
+		Description:      "transcient test plugin foo",
+		Group:            plugin.SystemCmdGroup,
+		Aliases:          []string{"tf"},
+		InstallationPath: "/tmp/tmpfoo",
+	}
+	plugins = append(plugins, pi)
+
 	return plugins, nil
 }
 
